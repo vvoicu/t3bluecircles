@@ -2,7 +2,7 @@
 .project
 .classpath
 
-
+/bin/
 /target/
 /.settings/
 
