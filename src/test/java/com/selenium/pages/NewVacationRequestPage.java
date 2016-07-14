@@ -13,6 +13,9 @@ public class NewVacationRequestPage extends PageObject {
 	@FindBy(css="input[id*='type_CO']")
     private WebElement radioButtonHoliday;
 	
+	@FindBy(css="input[id*='_type_CF']")
+    private WebElement radioButtonVacationWithoutPayment;
+	
 	@FindBy(css="input[id*='_saveButton']")
     private WebElement saveButton;
 	
