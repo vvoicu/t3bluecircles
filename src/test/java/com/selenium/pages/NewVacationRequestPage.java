@@ -1,5 +1,8 @@
 package com.selenium.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
@@ -10,11 +13,11 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 public class NewVacationRequestPage extends PageObject {
 	
-	@FindBy(css="input[id*='type_CO']")
-    private WebElement radioButtonHoliday;
+	//@FindBy(css="input[id*='type_CO']")
+    //private WebElement radioButtonHoliday;
 	
-	@FindBy(css="input[id*='_type_CF']")
-    private WebElement radioButtonVacationWithoutPayment;
+	@FindBy(css="div[id*='vacationTypeContainer']")
+	private WebElement vacationTypeList;
 	
 	@FindBy(css="input[id*='_saveButton']")
     private WebElement saveButton;
@@ -22,11 +25,23 @@ public class NewVacationRequestPage extends PageObject {
 	@FindBy(css="input[id*='_cancelButton']")
     private WebElement cancelButton;
 	
-	public void selectHolidayRadioButton(){
-		radioButtonHoliday.click();
+	//public void selectHolidayRadioButton(){
+		//radioButtonHoliday.click();
+	//}
+	
+	public void selectVacationType (String type){
+		//WebElement typeList = find(By.cssSelector("div[id*='vacationTypeContainer']"));
+		List<WebElement> results = vacationTypeList.findElements(By.cssSelector("div label"));
+		for (WebElement webElement : results){
+			//String name = webElement.getText();
+			if(webElement.getText().contains(type)){
+				webElement.click();
+				break;
+			}
+		}
 	}
 			
-	public void save_request() {
+	public void saveRequest() {
 	        saveButton.click();
 	}
 	
