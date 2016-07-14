@@ -32,7 +32,8 @@ public class NewRequestTest {
 	String password="test";
 	String text = "VACATION";
 	String text1 = "New Vacation Request";
-	String type = "Sick leave";
+	String type = "Vacation without payment";
+	String optionType = "Concediu Ingrijire Copil";
 	
 	
 	@Test
@@ -44,7 +45,7 @@ public class NewRequestTest {
 		//newRequestSteps.isTheHomePage();
 		navigationBarSteps.clickOnTab(text);
 		vacationMenuSteps.clickOnMenu(text1);
-		newRequestSteps.selectVacationType(type);
+		newRequestSteps.selectVacationType(type,optionType);
 		newRequestSteps.saveRequest();
 		
 	}
