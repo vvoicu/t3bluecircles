@@ -15,8 +15,8 @@ public class NewRequestSteps extends ScenarioSteps{
 	//}
 	
 	@Step
-	public void clickOnMenu(String type) {
-		newVacationRequestPage.selectVacationType(type);
+	public void clickOnMenu(String type, String optionType) {
+		newVacationRequestPage.selectVacationType(type,optionType);
 	}
 	
 	@Step
@@ -24,8 +24,8 @@ public class NewRequestSteps extends ScenarioSteps{
 		newVacationRequestPage.saveRequest();
 	}
 	@Step
-	public void selectVacationType (String type){
-		newVacationRequestPage.selectVacationType(type);
+	public void selectVacationType (String type,String optionType){
+		newVacationRequestPage.selectVacationType(type,optionType);
 	}
 	//@Step
     //public void isTheHomePage() {

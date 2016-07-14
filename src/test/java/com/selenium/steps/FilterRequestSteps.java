@@ -15,7 +15,15 @@ public class FilterRequestSteps extends ScenarioSteps {
 	 @Step
 	    public void apply(){
 		filterRequestsPage.apply();
-	}
+	 }
 	
+	 @Step
+	    public void verifyType(String type){
+		filterRequestsPage.verifyType(type);
+	}
+	 @Step
+	    public void selectNumber(){
+		filterRequestsPage.selectNumber();
+	 }
 
 }

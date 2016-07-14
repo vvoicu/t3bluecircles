@@ -30,7 +30,8 @@ public class FilterRequestTest {
 	String password = "test";
 	String text = "VACATION";
 	String text1 = "My Request";
-	String checkBox= "Sick Leave";
+	String checkBox= "Holiday";
+	String type="ALL";
 
 	@Test
 	public void selectTab() {
@@ -42,6 +43,10 @@ public class FilterRequestTest {
 		vacationMenuSteps.clickOnMenu(text1);
 		filterRequestSteps.clickOnCheckBox(checkBox);
 		filterRequestSteps.apply();
+		filterRequestSteps.selectNumber();
+		filterRequestSteps.verifyType(type);
+		
+		
 
 	}
 }
