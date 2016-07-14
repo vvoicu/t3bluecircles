@@ -18,8 +18,8 @@ public class NewRequestSteps extends ScenarioSteps{
 		newVacationRequestPage.save_request();
 	}
 	
-	@Step
-    public void is_the_home_page() {
-		newVacationRequestPage.open();
-	}
+	//@Step
+    //public void is_the_home_page() {
+		//newVacationRequestPage.open();
+	//}
 }
