@@ -14,8 +14,6 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 
-
-
 @DefaultUrl("http://172.22.4.88:9090/vacation")
 public class VacationMenuPage extends PageObject{
 
@@ -34,4 +32,6 @@ public class VacationMenuPage extends PageObject{
         		break;
         		
         	}
-        }}  }
+        }
+        } 
+	}
