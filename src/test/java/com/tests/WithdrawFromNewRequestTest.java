@@ -37,7 +37,7 @@ public class WithdrawFromNewRequestTest {
 	
 	@Test
 	public void withdrawNewRequest() {
-		loginSteps.page();
+		loginSteps.openPage();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn(); 
