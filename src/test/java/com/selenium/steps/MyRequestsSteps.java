@@ -6,6 +6,8 @@ import static org.hamcrest.Matchers.hasItem;
 
 import javax.validation.constraints.AssertTrue;
 
+import org.openqa.selenium.WebElement;
+
 import com.selenium.pages.LoginPage;
 import com.selenium.pages.MyRequestsPage;
 
@@ -30,6 +32,19 @@ public class MyRequestsSteps extends ScenarioSteps {
 		requestsPage.verifyColumnTitleExists(label);
 	}
 	*/
+	@Step
+	public Integer getNumberOfPages(){
+		return requestsPage.getNumberOfPages();
+	}
+	@Step
+	public WebElement getVacationRequest(String... details){
+		return requestsPage.getVacationRequest(details);
+	}
+	
+	@Step
+	public void clickOnAVacationRequestStatusCollumn(String... details){
+		requestsPage.clickOnAVacationRequestStatusCollumn(details);
+	}
 	
 	@Step
 	public void grabTextVacationStatus(){
@@ -44,6 +59,11 @@ public class MyRequestsSteps extends ScenarioSteps {
 	@Step
 	public void grabTextVacationType(){
 		requestsPage.grabTextVacationType();
+	}
+	
+	@Step
+	public void clickWithdrawButton(){
+		requestsPage.clickWithdrawButton();
 	}
 	
 }
