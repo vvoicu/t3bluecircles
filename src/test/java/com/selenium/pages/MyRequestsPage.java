@@ -1,20 +1,15 @@
 package com.selenium.pages;
 
-import ch.lambdaj.function.convert.Converter;
-import net.serenitybdd.core.annotations.findby.FindBy;
-import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.annotations.DefaultUrl;
+import java.util.List;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-
-import java.util.List;
-
-import static ch.lambdaj.Lambda.convert;
 
 @DefaultUrl("http://172.22.4.88:9090/vacation?p_p_id=evovacation_WAR_EvoVacationportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_evovacation_WAR_EvoVacationportlet_backURL=%2Fvacation&_evovacation_WAR_EvoVacationportlet_menuItem=my-requests")
 public class MyRequestsPage extends PageObject {
@@ -33,6 +28,15 @@ public class MyRequestsPage extends PageObject {
 
 	@FindBy(css = "span[applyButton]")
 	private WebElementFacade myApplyButton;
+	@FindBy(css="span[class*='aui-paginator-total']")
+	private WebElement paginatorContainer;
+	@FindBy(css="a[class='aui-paginator-link aui-paginator-next-link']")
+	private WebElement nextPageCssSelector;
+	@FindBy(css=".taglib-search-iterator tr:not([class*='lfr-template'])")
+	private List<WebElement> resultsList;
+	private String requestStatusColumnCssSelector="td:last-child";
+	@FindBy (id="_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
+	private WebElement withdrawButton; 
 	
 	/*
 	public void verifyColumnTitleExists(String label){
@@ -48,6 +52,45 @@ public class MyRequestsPage extends PageObject {
 		
 	}
 	*/
+	public void clickWithdrawButton(){
+		withdrawButton.click();
+	}
+	
+	public Integer getNumberOfPages(){
+		  String total = paginatorContainer.getText();
+		  String [] parts = total.split("of ");
+		  String part1 = parts[1];
+		  String [] parts1 = part1.split("\\) \\(Total");
+		  String part2 = parts1[0];
+		  return Integer.parseInt(part2);
+	}
+	public WebElement getVacationRequest(String... details){
+		boolean isItemfound=false;
+		int numberOfPages=getNumberOfPages();
+		for(int i=0;i<numberOfPages;i++){
+			for(WebElement resultItem:resultsList){
+				for(String detail:details){
+				if(resultItem.getText().toLowerCase().contains(detail.toLowerCase())){
+					isItemfound=true;
+				}
+				else {
+					isItemfound=false;
+					break;
+				}
+			}
+			if(isItemfound)
+				return resultItem;
+		}
+			nextPageCssSelector.click();
+			waitABit(1000);
+	}
+		Assert.assertTrue("The result was not found!", isItemfound);
+	return null;
+}
+	public void clickOnAVacationRequestStatusCollumn(String... details){
+		getVacationRequest(details).findElement(By.cssSelector(requestStatusColumnCssSelector)).click();
+	}
+	
 	public void vacationType(String keyword) {
 		myVacationType.type(keyword);
 	}
