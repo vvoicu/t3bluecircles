@@ -58,5 +58,11 @@ public class MyRequestsSteps extends ScenarioSteps {
 	public void clickWithdrawButton(){
 		requestsPage.clickWithdrawButton();
 	}
+	/*
+	@Step
+	public void checkWithdrawStatus(){
+		requestsPage.checkStatus();
+	}
+	*/
 	
 }
