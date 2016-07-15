@@ -1,6 +1,7 @@
 package com.tests;
 
-import java.sql.Driver;
+
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
