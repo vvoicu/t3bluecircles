@@ -13,13 +13,26 @@ public class NewRequestSteps extends ScenarioSteps{
 	 //public void selectHolidayRadioButton(){
 		// newVacationRequestPage.selectHolidayRadioButton();
 	//}
+	
 	@Step
-	public void save_request(){
-		newVacationRequestPage.save_request();
+	public void clickOnMenu(String type, String optionType) {
+		newVacationRequestPage.selectVacationType(type,optionType);
 	}
 	
+	@Step
+	public void saveRequest(){
+		newVacationRequestPage.saveRequest();
+	}
+	@Step
+	public void selectVacationType (String type,String optionType){
+		newVacationRequestPage.selectVacationType(type,optionType);
+	}
 	//@Step
-    //public void is_the_home_page() {
+    //public void isTheHomePage() {
 		//newVacationRequestPage.open();
 	//}
+	
+	
 }
+
+	

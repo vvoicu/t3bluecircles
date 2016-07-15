@@ -1,3 +1,4 @@
+
 package com.tests;
 
 import org.junit.Test;
@@ -32,6 +33,8 @@ public class NewRequestTest {
 	String password="test";
 	String text = "VACATION";
 	String text1 = "New Vacation Request";
+	String type = "Vacation without payment";
+	String optionType = "Concediu Ingrijire Copil";
 	
 	
 	@Test
@@ -40,10 +43,11 @@ public class NewRequestTest {
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn(); 
-		//newRequestSteps.is_the_home_page();
+		//newRequestSteps.isTheHomePage();
 		navigationBarSteps.clickOnTab(text);
 		vacationMenuSteps.clickOnMenu(text1);
-		newRequestSteps.save_request();
+		newRequestSteps.selectVacationType(type,optionType);
+		newRequestSteps.saveRequest();
 		
 	}
 
