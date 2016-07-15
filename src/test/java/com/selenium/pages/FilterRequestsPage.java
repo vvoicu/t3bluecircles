@@ -15,7 +15,10 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class FilterRequestsPage extends PageObject {
 
 	@FindBy(css = "div[class='aui-column-content aui-column-content-first column-three-content ']")
-	private WebElementFacade filterRequest;
+	private WebElementFacade vacationType;
+	
+	@FindBy(css = "div[class='aui-column-content column-three-content column-center-content ']")
+	private WebElementFacade dayNumber;
 
 	@FindBy(css = "input[class='aui-button-input']")
 	private WebElementFacade apply;
@@ -27,13 +30,24 @@ public class FilterRequestsPage extends PageObject {
 	private WebElementFacade selectNumber;
 
 	public void clickOnCheckBox(String checkBox) {
-		List<WebElement> results = filterRequest.findElements(By.cssSelector("span span label"));
+		List<WebElement> results = vacationType.findElements(By.cssSelector("span span label"));
 		for (WebElement webElement : results) {
 			// System.out.println("aaa: " + webElement.getText());
 			if (webElement.getText().contains(checkBox)) {
 				webElement.click();
 			}
 		}
+		}
+		
+		public void clickOnCheckBox2(String checkBox2) {
+			List<WebElement> results = dayNumber.findElements(By.cssSelector("span span label"));
+			for (WebElement webElement : results) {
+				// System.out.println("aaa: " + webElement.getText());
+				if (webElement.getText().contains(checkBox2)) {
+					webElement.click();
+				}
+			}
+		
 	}
 
 	public void verifyType(String type) {

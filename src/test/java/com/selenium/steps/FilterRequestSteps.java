@@ -12,6 +12,11 @@ public class FilterRequestSteps extends ScenarioSteps {
 	public void clickOnCheckBox(String checkBox){
 	filterRequestsPage.clickOnCheckBox(checkBox);
 	   }
+	 
+	 @Step
+		public void clickOnCheckBox2(String checkBox2){
+		filterRequestsPage.clickOnCheckBox2(checkBox2);
+		   }
 	 @Step
 	    public void apply(){
 		filterRequestsPage.apply();
