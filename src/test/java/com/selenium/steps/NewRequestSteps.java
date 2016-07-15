@@ -15,18 +15,25 @@ public class NewRequestSteps extends ScenarioSteps{
 	//}
 	
 	@Step
-	public void clickOnMenu(String type, String optionType) {
-		newVacationRequestPage.selectVacationType(type,optionType);
+	public void clickOnMenu(String vacationType, String optionType) {
+		newVacationRequestPage.selectVacationType(vacationType,optionType);
 	}
 	
 	@Step
 	public void saveRequest(){
 		newVacationRequestPage.saveRequest();
 	}
+	
 	@Step
-	public void selectVacationType (String type,String optionType){
-		newVacationRequestPage.selectVacationType(type,optionType);
+	public void selectVacationType (String vacationType,String optionType){
+		newVacationRequestPage.selectVacationType(vacationType,optionType);
 	}
+	
+	@Step
+	public void withdrawRequest(){
+		newVacationRequestPage.withdrawRequest();
+	}
+	
 	//@Step
     //public void isTheHomePage() {
 		//newVacationRequestPage.open();

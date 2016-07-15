@@ -1,4 +1,3 @@
-
 package com.tests;
 
 import org.junit.Test;
@@ -16,8 +15,7 @@ import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
 
-public class NewRequestTest {
-	
+public class WithdrawFromNewRequestTest {
 	@Managed(uniqueSession = true)
     public WebDriver webdriver;
 	@Steps
@@ -33,22 +31,25 @@ public class NewRequestTest {
 	String password="test";
 	String text = "VACATION";
 	String text1 = "New Vacation Request";
-	String vacationType = "Holiday";
+	String vacationType = "Maternity Leave";
 	String optionType = "Concediu Ingrijire Copil";
 	
 	
 	@Test
-	public void createNewRequest() {
+	public void withdrawNewRequest() {
 		loginSteps.page();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn(); 
-		//newRequestSteps.isTheHomePage();
 		navigationBarSteps.clickOnTab(text);
 		vacationMenuSteps.clickOnMenu(text1);
 		newRequestSteps.selectVacationType(vacationType,optionType);
 		newRequestSteps.saveRequest();
+		newRequestSteps.withdrawRequest();
 		
 	}
 
 }
+
+
+
