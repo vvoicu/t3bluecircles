@@ -32,7 +32,7 @@ public class MyInboxTest {
 
 	@Test
 	public void vacationApprove() {
-		loginSteps.page();
+		loginSteps.openPage();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn();
