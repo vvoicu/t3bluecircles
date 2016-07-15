@@ -61,4 +61,9 @@ public class MyRequestsSteps extends ScenarioSteps {
 		requestsPage.grabTextVacationType();
 	}
 	
+	@Step
+	public void clickWithdrawButton(){
+		requestsPage.clickWithdrawButton();
+	}
+	
 }

@@ -35,6 +35,9 @@ public class MyRequestsPage extends PageObject {
 	@FindBy(css=".taglib-search-iterator tr:not([class*='lfr-template'])")
 	private List<WebElement> resultsList;
 	private String requestStatusColumnCssSelector="td:last-child";
+	@FindBy (id="_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
+	private WebElement withdrawButton; 
+	
 	/*
 	public void verifyColumnTitleExists(String label){
 		boolean isPresent = false;
@@ -49,6 +52,9 @@ public class MyRequestsPage extends PageObject {
 		
 	}
 	*/
+	public void clickWithdrawButton(){
+		withdrawButton.click();
+	}
 	
 	public Integer getNumberOfPages(){
 		  String total = paginatorContainer.getText();
