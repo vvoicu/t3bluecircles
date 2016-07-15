@@ -27,7 +27,7 @@ public class LogInTest {
 
 	@Test
 	public void logInTest() {
-		loginSteps.page();
+		loginSteps.openPage();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn();     

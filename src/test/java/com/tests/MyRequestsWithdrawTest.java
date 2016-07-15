@@ -33,7 +33,7 @@ public class MyRequestsWithdrawTest {
 
 	@Test
 	public void requestsSheet() {
-		loginSteps.page();
+		loginSteps.openPage();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn();

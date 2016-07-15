@@ -30,7 +30,7 @@ public class VacationMenuTest {
 
 	@Test
 	public void selectTab() {
-		loginSteps.page();
+		loginSteps.openPage();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn();
