@@ -23,12 +23,27 @@ public class DatePickerSteps extends ScenarioSteps {
 	public void selectDay(String day){
 		datePickerPage.selectDay(day);
 	}
+	@Step
+	public void clickStartDate(){
+	datePickerPage.clickStartDate();
+	}
+	@Step
+	public void clickEndDate(){
+	datePickerPage.clickEndDate();
+	}
 	
 	@StepGroup
-  public void selectDate(String year, String month, String day){
+  public void selectStartDate(String year, String month, String day){
 		selectYear(year);
 		selectMonth(month);
 		selectDay(day);
 		
 	}
+	@StepGroup
+	  public void selectEndDate(String endYear, String endMonth, String endDay){
+			selectYear(endYear);
+			selectMonth(endMonth);
+			selectDay(endDay);
+			
+}
 }

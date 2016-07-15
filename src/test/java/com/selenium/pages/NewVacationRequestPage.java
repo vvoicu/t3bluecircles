@@ -27,6 +27,9 @@ public class NewVacationRequestPage extends PageObject {
 
 	@FindBy(css = "input[id*='_saveButton']")
 	private WebElement saveButton;
+	
+	@FindBy(css = "input[value=Withdraw]")
+	private WebElement WithdrawButton;
 
 	@FindBy(css = "input[id*='_cancelButton']")
 	private WebElement cancelButton;
@@ -55,27 +58,31 @@ public class NewVacationRequestPage extends PageObject {
 		}
 	}
 
-	public void selectVacationType(String type, String optionType) {
+	public void selectVacationType(String vacationType, String optionType) {
 		// WebElement typeList =
 		// find(By.cssSelector("div[id*='vacationTypeContainer']"));
 		List<WebElement> results = vacationTypeList.findElements(By.cssSelector("div label"));
 		for (WebElement webElement : results) {
 			// String name = webElement.getText();
-			if (webElement.getText().contains(type)) {
+			if (webElement.getText().contains(vacationType)) {
 				webElement.click();
 				break;
 			}
 		}
-		if (type.equals("Special vacation")) {
+		if (vacationType.equals("Special vacation")) {
 			selectSpecialVacation(optionType);
 		}
-		if (type.equals("Maternity Leave")) {
+		if (vacationType.equals("Maternity Leave")) {
 			selectMaternityLeave(optionType);
 		}
 	}
 
 	public void saveRequest() {
 		saveButton.click();
+	}
+	
+	public void withdrawRequest() {
+		WithdrawButton.click();
 	}
 
 	public void cancel_request() {
