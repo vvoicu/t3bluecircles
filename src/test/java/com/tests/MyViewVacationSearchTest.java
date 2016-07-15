@@ -31,7 +31,7 @@ public class MyViewVacationSearchTest {
 
 	@Test
 	public void requestWithdraw() {
-		loginSteps.page();
+		loginSteps.openPage();
 		loginSteps.writeUsername(userName);
 		loginSteps.writePassword(password);
 		loginSteps.clickSignIn();  
