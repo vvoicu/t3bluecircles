@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import com.selenium.steps.LogInSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
-
-
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
