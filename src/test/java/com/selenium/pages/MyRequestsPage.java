@@ -105,8 +105,9 @@ public class MyRequestsPage extends PageObject {
 		return null;
 	}
 
-	public void clickOnAVacationRequestStatusCollumn(String... details) {
+	public void clickOnAVacationRequestStatusCollumn(String currentUrl, String... details) {
 		getVacationRequest(details).findElement(By.cssSelector(requestStatusColumnCssSelector)).click();
+		currentUrl = getDriver().getCurrentUrl();
 	}
 
 	public void vacationType(String keyword) {

@@ -21,8 +21,9 @@ public class YahooSignInPage extends PageObject {
 	private WebElement userNameField;
 	@FindBy(css = "div.mbr-login-username input#login-username.login-input.pure-u-1")
 	private WebElement nextButton;
-	@FindBy(css = ".pure-form button[type='submit']")
+	@FindBy(css = "div.passwd-field input.login-input.pure-u-1")
 	private WebElement userPasswordField;
+	
 	@FindBy(css = "div.mbr-login-submit button.pure-u-1.pure-button.mbr-button-primary")
 	private WebElement signInButton;
 
@@ -47,10 +48,12 @@ public class YahooSignInPage extends PageObject {
 	}
 
 	public void inputUserPassword(String userPassword) {
+		element(userPasswordField).waitUntilVisible();
 		userPasswordField.sendKeys(userPassword);
 	}
 
 	public void clickSignInButton() {
+		element(signInButton).waitUntilVisible();
 		signInButton.click();
 	}
 

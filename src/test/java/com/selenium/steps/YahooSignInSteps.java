@@ -1,5 +1,9 @@
 package com.selenium.steps;
 
+import javax.validation.constraints.AssertTrue;
+
+import org.hibernate.validator.cfg.defs.AssertTrueDef;
+
 import com.selenium.pages.YahooSignInPage;
 
 import net.thucydides.core.annotations.Step;
@@ -37,6 +41,7 @@ public class YahooSignInSteps extends ScenarioSteps {
 	@Step
 	public void inputUserPassword(String userPassword){
 		yahooSignInPage.inputUserPassword(userPassword);
+		//assert.AssertTrue();
 	}
 
 	@Step
