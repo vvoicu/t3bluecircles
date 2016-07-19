@@ -34,9 +34,9 @@ public class MyRequestsSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void clickOnAVacationRequestStatusCollumn(String currentUrl, String... details) {
-		requestsPage.clickOnAVacationRequestStatusCollumn(currentUrl);
-		requestsPage.clickOnAVacationRequestStatusCollumn(currentUrl, details);
+	public void clickOnAVacationRequestStatusCollumn(String... details) {
+		//requestsPage.clickOnAVacationRequestStatusCollumn(currentUrl);
+		requestsPage.clickOnAVacationRequestStatusCollumn(details);
 	}
 
 	@Step

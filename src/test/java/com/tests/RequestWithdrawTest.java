@@ -47,6 +47,8 @@ public class RequestWithdrawTest {
 		myRequestsSteps.clickOnAVacationRequestStatusCollumn(startDate, endDate, daysNumber, type, lastUpdatedBy,
 				pending);
 		myRequestsSteps.clickWithdrawButton();
+		
+		
 		// myRequestsSteps.checkWithdrawStatus();
 
 	}

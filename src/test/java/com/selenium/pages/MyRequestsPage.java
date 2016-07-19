@@ -34,8 +34,8 @@ public class MyRequestsPage extends PageObject {
 	private WebElement nextPageCssSelector;
 	@FindBy(css = ".taglib-search-iterator tr:not([class*='lfr-template'])")
 	private List<WebElement> resultsList;
-	private String requestStatusColumnCssSelector = "td:last-child";
-	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
+	private String requestStatusColumnCssSelector = ".align-left.col-6";
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest") //??
 	private WebElement withdrawButton;
 	@FindBy(css = "div.horizontal-center-alignment")
 	private WebElement successfulWithdrawMessage;
@@ -83,11 +83,14 @@ public class MyRequestsPage extends PageObject {
 	}
 
 	public WebElement getVacationRequest(String... details) {
+		System.out.println("aaa");
 		boolean isItemfound = false;
 		int numberOfPages = getNumberOfPages();
 		for (int i = 0; i < numberOfPages; i++) {
 			for (WebElement resultItem : resultsList) {
+				System.out.println("bbb");
 				for (String detail : details) {
+					System.out.println("detail: "+detail);
 					if (resultItem.getText().toLowerCase().contains(detail.toLowerCase())) {
 						isItemfound = true;
 					} else {
@@ -105,9 +108,9 @@ public class MyRequestsPage extends PageObject {
 		return null;
 	}
 
-	public void clickOnAVacationRequestStatusCollumn(String currentUrl, String... details) {
+	public void clickOnAVacationRequestStatusCollumn(String... details) {
 		getVacationRequest(details).findElement(By.cssSelector(requestStatusColumnCssSelector)).click();
-		currentUrl = getDriver().getCurrentUrl();
+		//currentUrl = getDriver().getCurrentUrl();
 	}
 
 	public void vacationType(String keyword) {
