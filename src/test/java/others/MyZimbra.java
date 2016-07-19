@@ -15,9 +15,9 @@ import javax.mail.Store;
 import javax.mail.internet.MimeMultipart;
 
 public class MyZimbra {
-	//Part where
-	
-	public void writeToFile(String text){
+	// Part where
+
+	public void writeToFile(String text) {
 		try {
 			File file = new File("src/test/resources/zimbraContent.txt");
 			// if file doesnt exists, then create it
@@ -40,11 +40,12 @@ public class MyZimbra {
 		Properties props = new Properties();
 		try {
 			// Read smtp.
-			props.load(new FileInputStream("C:\\Users\\danielnistreanu\\git\\t3bluecircles\\src\\test\\resources\\smtpZimbra.properties"));
+			props.load(new FileInputStream(
+					"C:\\Users\\danielnistreanu\\git\\t3bluecircles\\src\\test\\resources\\smtpZimbra.properties"));
 			Session session = Session.getDefaultInstance(props, null);
 			// Login.
 			Store store = session.getStore("imaps");
-			store.connect("mail.evozon.com", "daniel.nistreanu@evozon.com", "Parola1111.");
+			store.connect("mail.evozon.com", "daniel.nistreanu@evozon.com", "Asdf1234!@#$");
 			// Get messages number.
 			Folder inbox = store.getFolder("inbox");
 			inbox.open(Folder.READ_ONLY);
@@ -107,8 +108,7 @@ public class MyZimbra {
 		String message = "";
 		MyZimbra zimbra = new MyZimbra();
 		zimbra.read();
-		
-		
+
 	}
 
 }

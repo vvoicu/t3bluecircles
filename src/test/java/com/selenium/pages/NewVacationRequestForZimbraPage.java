@@ -9,15 +9,12 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-public class MyZimbraPage extends PageObject{
-	
+public class NewVacationRequestForZimbraPage extends PageObject {
 
 	@FindBy(css = "input[id*='start']")
 	private WebElementFacade startDate;
-
 	@FindBy(css = "input[id*='end']")
 	private WebElementFacade endDate;
-	
 	@FindBy(css = "input.aui-button-input.aui-button-input-submit")
 	private WebElement saveButton;
 
@@ -46,7 +43,8 @@ public class MyZimbraPage extends PageObject{
 
 	public void selectMonth(String month) {
 		boolean monthFound = false;
-		WebElement monthContainer = getDriver().findElement(By.cssSelector("div[style*='block']  table.dp_monthpicker"));
+		WebElement monthContainer = getDriver()
+				.findElement(By.cssSelector("div[style*='block']  table.dp_monthpicker"));
 		List<WebElement> monthElement = monthContainer
 				.findElements(By.cssSelector("tr td:not([class$='dp_disabled'])"));
 		for (WebElement element : monthElement) {
@@ -58,8 +56,8 @@ public class MyZimbraPage extends PageObject{
 		}
 		if (!(monthFound)) {
 			System.out.println("The month was not found");
-	}
 		}
+	}
 
 	public void selectDay(String day) {
 		boolean dayFound = false;
@@ -79,9 +77,12 @@ public class MyZimbraPage extends PageObject{
 		}
 		waitABit(2500);
 	}
-	
-	public void clickSaveButton(){
+
+	public void clickSaveButton() {
 		saveButton.click();
 	}
 
+	public void openZimbraPage() {
+
+	}
 }

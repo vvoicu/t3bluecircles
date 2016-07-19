@@ -78,5 +78,9 @@ public class DatePickerPage extends PageObject {
 		}
 		waitABit(4000);
 	}
+	
+	public void openZimbraLoginPage(){
+		
+	}
 
 }
