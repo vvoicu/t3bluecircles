@@ -1,0 +1,33 @@
+
+Access for less secure apps has been turned on
+
+
+
+Hi Nistreanu,
+You recently changed your security settings so that your Google Account
+testmailevozon@gmail.com is no longer protected by modern security
+standards.
+
+Please be aware that it is now easier for an attacker to break into your
+account. You can make your account safer again by undoing this change here
+<https://www.google.com/settings/security/lesssecureapps>, then switching
+to apps made by Google such as Gmail to access your account.
+
+*Don't recognize this activity?*
+Review your recently used devices
+<https://accounts.google.com/AccountChooser?Email=testmailevozon@gmail.com&continue=https://security.google.com/settings/security/activity?rfn%3D28%26rfnc%3D1%26asae%3D2>
+now.
+
+Best,
+The Google Accounts team
+
+
+
+This email can't receive replies. For more information, visit the Google
+Accounts Help Center <https://support.google.com/accounts/answer/6010255>.
+
+
+
+You received this mandatory email service announcement to update you about
+important changes to your Google product or account.
+© 2016 Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
