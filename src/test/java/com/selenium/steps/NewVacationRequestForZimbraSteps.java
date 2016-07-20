@@ -56,4 +56,10 @@ public class NewVacationRequestForZimbraSteps extends ScenarioSteps {
 		myVacationPageForZimbra.clickSaveButton();
 	}
 
+	@Step
+	public void monthsToInt(String month) {
+		myVacationPageForZimbra.monthsToInt(month);
+
+	}
+
 }

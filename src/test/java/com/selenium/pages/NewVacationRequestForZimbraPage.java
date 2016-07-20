@@ -82,7 +82,48 @@ public class NewVacationRequestForZimbraPage extends PageObject {
 		saveButton.click();
 	}
 
-	public void openZimbraPage() {
+	public static String monthsToInt(String month) {
+		String[] str = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+		if (month.equals(str[0])) {
+			return "01";
+		}
+
+		if (month.equals(str[1])) {
+			return "02";
+		}
+		if (month.equals(str[2])) {
+			return "03";
+		}
+		if (month.equals(str[3])) {
+			return "04";
+		}
+		if (month.equals(str[4])) {
+			return "05";
+		}
+		if (month.equals(str[5])) {
+			return "06";
+		}
+		if (month.equals(str[6])) {
+			return "07";
+		}
+		if (month.equals(str[7])) {
+			return "08";
+		}
+		if (month.equals(str[8])) {
+			return "09";
+		}
+		if (month.equals(str[9])) {
+			return "10";
+		}
+		if (month.equals(str[10])) {
+			return "11";
+		}
+		if (month.equals(str[11])) {
+			return "12";
+		}
+
+		return "Invalid input data.";
 
 	}
 }
